@@ -1,0 +1,91 @@
+﻿Dog drug = new Dog("гав", "кости", "будка", "Дружок");
+drug.makeNoise();
+Cat kitya = new Cat("мяу", "молоко", "квартира", "Китя");
+kitya.eat();
+Horse lana = new Horse("игого", "яблоко", "ферма", "Лана");
+lana.makeNoise();
+priem(drug.name);
+priem(kitya.name);
+priem(lana.name);
+void priem(string i)
+{
+    Console.WriteLine($"{i} на приёме у ветеринара");
+}
+class Animal
+{
+    public string name;
+    public string food;
+    public string location;
+    public Animal(string food, string location, string name)
+    {
+        this.food = food;
+        this.location = location;
+        this.name = name;
+    }
+    public virtual void makeNoise()
+    {
+        Console.WriteLine(name);
+    }
+    public void sleep(string a)
+    {
+        Console.WriteLine($"{a} спит");
+    }
+    public virtual void eat()
+    {
+        Console.WriteLine(name);
+    }
+
+}
+class Dog : Animal // наследование 
+{
+    public string noise;
+
+    public Dog(string noise, string food, string location, string name) : base(food, location, name)
+    {
+        this.noise = noise;
+    }
+    public override void eat()
+    {
+        Console.WriteLine($"{name} ест");
+    }
+    public override void makeNoise()
+    {
+        Console.WriteLine($"{name} издаёт звуки {noise}");
+    }
+}
+class Cat : Animal // наследование
+{
+    public string noise;
+
+    public Cat(string noise, string food, string location, string name) : base(food, location, name)
+    {
+        this.noise = noise;
+    }
+    public override void eat()
+    {
+        Console.WriteLine($"{name} ест");
+    }
+    public override void makeNoise()
+    {
+        Console.WriteLine($"{name} издаёт звуки {noise}");
+    }
+}
+class Horse : Animal // наследование
+{
+    public string noise;
+
+    public Horse(string noise, string food, string location, string name) : base(food, location, name)
+    {
+        this.noise = noise;
+    }
+    public override void eat()
+    {
+        Console.WriteLine($"{name} ест");
+    }
+    public override void makeNoise()
+    {
+        Console.WriteLine($"{name} издаёт звуки {noise}");
+    }
+}
+
+
